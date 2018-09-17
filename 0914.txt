@@ -1,0 +1,12 @@
+http://112.17.124.225/webservice/JustcallWebServicePublicNet.wsdl
+
+http://112.17.124.225:8017/webservice/JustcallWebServicePublicNet.wsdl
+
+
+http://112.17.124.225:8017/webservice/JustcallWebService.wsdl
+
+
+
+http://60.191.34.150:8017/webservice/JustcallWebService.wsdl （PBX内网80端口）
+
+http://60.191.34.150:8017/webservice/JustcallWebServicePublicNet.wsdl
