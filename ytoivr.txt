@@ -1,0 +1,510 @@
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'Progress'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [77700000@from-pstn:1] Progress("SIP/77700000-0000184d", "") in new stack
+[Sep  8 09:44:28] DEBUG[29539] chan_sip.c: Setting framing from config on incoming call
+[Sep  8 09:44:28] DEBUG[29539] chan_sip.c: ** Our capability: 0xe (gsm|ulaw|alaw) Video flag: True Text flag: True
+[Sep  8 09:44:28] DEBUG[29539] chan_sip.c: ** Our prefcodec: 0x0 (nothing) 
+[Sep  8 09:44:28] DEBUG[29539] chan_sip.c: -- Done with adding codecs to SDP
+[Sep  8 09:44:28] DEBUG[29539] chan_sip.c: Done building SDP. Settling with this capability: 0xe (gsm|ulaw|alaw)
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'Answer'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [77700000@from-pstn:2] Answer("SIP/77700000-0000184d", "") in new stack
+[Sep  8 09:44:28] DEBUG[29539] chan_sip.c: SIP answering channel: SIP/77700000-0000184d
+[Sep  8 09:44:28] DEBUG[29539] res_rtp_asterisk.c: Setting the marker bit due to a source update
+[Sep  8 09:44:28] DEBUG[29539] chan_sip.c: Setting framing from config on incoming call
+[Sep  8 09:44:28] DEBUG[29539] chan_sip.c: ** Our capability: 0xe (gsm|ulaw|alaw) Video flag: True Text flag: True
+[Sep  8 09:44:28] DEBUG[29539] chan_sip.c: ** Our prefcodec: 0x0 (nothing) 
+[Sep  8 09:44:28] DEBUG[29539] chan_sip.c: -- Done with adding codecs to SDP
+[Sep  8 09:44:28] DEBUG[29539] chan_sip.c: Done building SDP. Settling with this capability: 0xe (gsm|ulaw|alaw)
+[Sep  8 09:44:28] DEBUG[29539] channel.c: Didn't receive a media frame from SIP/77700000-0000184d within 500 ms of answering. Continuing anyway
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [77700000@from-pstn:3] Set("SIP/77700000-0000184d", "CALLEE=77700000") in new stack
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [77700000@from-pstn:4] Set("SIP/77700000-0000184d", "__DID=77700000") in new stack
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Function result is '18049895676'
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [77700000@from-pstn:5] Set("SIP/77700000-0000184d", "CALLERID(name)=18049895676") in new stack
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'Goto'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [77700000@from-pstn:6] Goto("SIP/77700000-0000184d", "from-trunk,77700000,1") in new stack
+[Sep  8 09:44:28] WARNING[29539] pbx.c: will not go assign 
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- just Goto (from-trunk,77700000,1)
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'Goto'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [77700000@from-trunk:1] Goto("SIP/77700000-0000184d", "s,1") in new stack
+[Sep  8 09:44:28] WARNING[29539] pbx.c: will not go assign 
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- just Goto (from-trunk,s,1)
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'Goto'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [s@from-trunk:1] Goto("SIP/77700000-0000184d", "did-ss_blacklist,s,1") in new stack
+[Sep  8 09:44:28] WARNING[29539] pbx.c: will not go assign 
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- just Goto (did-ss_blacklist,s,1)
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [s@did-ss_blacklist:1] Set("SIP/77700000-0000184d", "PHONEFILE=ss_blacklist") in new stack
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'AGI'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [s@did-ss_blacklist:2] AGI("SIP/77700000-0000184d", "agi://127.0.0.1/in_number") in new stack
+[Sep  8 09:44:28] VERBOSE[29539] res_agi.c: agi://127.0.0.1/in_number: request is agi://127.0.0.1/in_number, method is in_number, path is 
+[Sep  8 09:44:28] VERBOSE[29539] res_agi.c:  agi://127.0.0.1/in_number:  select phone from ss_blacklist where phone=substring('18049895676',1,length(phone))
+[Sep  8 09:44:28] VERBOSE[29539] res_agi.c:  agi://127.0.0.1/in_number:  phonefile is ss_blacklist
+[Sep  8 09:44:28] VERBOSE[29539] res_agi.c:     -- <SIP/77700000-0000184d>AGI Script agi://127.0.0.1/in_number completed, returning 0
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'Goto'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [nomatch@did-ss_blacklist:1] Goto("SIP/77700000-0000184d", "ext-did-phone,s,ss_blacklist") in new stack
+[Sep  8 09:44:28] WARNING[29539] pbx.c: will not go assign 
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- just Goto (ext-did-phone,s,2)
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [s@ext-did-phone:2] Set("SIP/77700000-0000184d", "PHONEFILE=") in new stack
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'Goto'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [s@ext-did-phone:3] Goto("SIP/77700000-0000184d", "from-zaptel,s,1") in new stack
+[Sep  8 09:44:28] WARNING[29539] pbx.c: will not go assign 
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- just Goto (from-zaptel,s,1)
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Function result is '18049895676'
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'CallinArea'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [s@from-zaptel:1] CallinArea("SIP/77700000-0000184d", "18049895676,callin,0") in new stack
+[Sep  8 09:44:28] DEBUG[29539] core_trie.c: I will find number is 018049895676 
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Expression result is '0'
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'GotoIf'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [s@from-zaptel:2] GotoIf("SIP/77700000-0000184d", "0?:in-ai,t,1") in new stack
+[Sep  8 09:44:28] WARNING[29539] pbx.c: will not go assign 
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- just Goto (in-ai,t,1)
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'Goto'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [t@in-ai:1] Goto("SIP/77700000-0000184d", "from-zaptel-just,s,1") in new stack
+[Sep  8 09:44:28] WARNING[29539] pbx.c: will not go assign 
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- just Goto (from-zaptel-just,s,1)
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'NoOp'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [s@from-zaptel-just:1] NoOp("SIP/77700000-0000184d", "Entering from-zaptel with DID == 77700000") in new stack
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Expression result is '0'
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Function result is '77700000'
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [s@from-zaptel-just:2] Set("SIP/77700000-0000184d", "DID=77700000") in new stack
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Expression result is '0'
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Function result is '77700000'
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [s@from-zaptel-just:3] Set("SIP/77700000-0000184d", "DID=77700000") in new stack
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'Goto'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [s@from-zaptel-just:4] Goto("SIP/77700000-0000184d", "ext-did,77700000,1") in new stack
+[Sep  8 09:44:28] WARNING[29539] pbx.c: will not go assign 
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- just Goto (ext-did,77700000,1)
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'NoOp'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [77700000@ext-did:1] NoOp("SIP/77700000-0000184d", "Catch-All DID Match - Found 77700000 - You probably want a DID for this.") in new stack
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'Goto'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [77700000@ext-did:2] Goto("SIP/77700000-0000184d", "ext-did,s,1") in new stack
+[Sep  8 09:44:28] WARNING[29539] pbx.c: will not go assign 
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- just Goto (ext-did,s,1)
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'Goto'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [s@ext-did:1] Goto("SIP/77700000-0000184d", "ext-did-exten,s,1") in new stack
+[Sep  8 09:44:28] WARNING[29539] pbx.c: will not go assign 
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- just Goto (ext-did-exten,s,1)
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'NoOp'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [s@ext-did-exten:1] NoOp("SIP/77700000-0000184d", "enter ext-did-exten.") in new stack
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Expression result is '1'
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Function result is 'out'
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'Goto'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [s@ext-did-exten:2] Goto("SIP/77700000-0000184d", "out,1") in new stack
+[Sep  8 09:44:28] WARNING[29539] pbx.c: will not go assign 
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- just Goto (ext-did-exten,out,1)
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'Goto'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [out@ext-did-exten:1] Goto("SIP/77700000-0000184d", "ext-did,s,exten") in new stack
+[Sep  8 09:44:28] WARNING[29539] pbx.c: will not go assign 
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- just Goto (ext-did,s,2)
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'NoOp'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [s@ext-did:2] NoOp("SIP/77700000-0000184d", "Comming back from ext-did-exten.") in new stack
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [s@ext-did:3] Set("SIP/77700000-0000184d", "FROM_DID=s") in new stack
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'Goto'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [s@ext-did:4] Goto("SIP/77700000-0000184d", "ivr-3,s,1") in new stack
+[Sep  8 09:44:28] WARNING[29539] pbx.c: will not go assign 
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- just Goto (ivr-3,s,1)
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [s@ivr-3:1] Set("SIP/77700000-0000184d", "LOOPCOUNT=0") in new stack
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [s@ivr-3:2] Set("SIP/77700000-0000184d", "__DIR-CONTEXT=ivr-3") in new stack
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [s@ivr-3:3] Set("SIP/77700000-0000184d", "__DIR-CHANNEL=SIP/77700000-0000184d") in new stack
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'Answer'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [s@ivr-3:4] Answer("SIP/77700000-0000184d", "") in new stack
+[Sep  8 09:44:28] DEBUG[29539] pbx.c: Launching 'Wait'
+[Sep  8 09:44:28] VERBOSE[29539] pbx.c:     -- Executing [s@ivr-3:5] Wait("SIP/77700000-0000184d", "1") in new stack
+[Sep  8 09:44:29] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:29] VERBOSE[29539] pbx.c:     -- Executing [s@ivr-3:6] Set("SIP/77700000-0000184d", "TIMEOUT(digit)=3") in new stack
+[Sep  8 09:44:29] VERBOSE[29539] func_timeout.c:     -- Digit timeout set to 3.000
+[Sep  8 09:44:29] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:29] VERBOSE[29539] pbx.c:     -- Executing [s@ivr-3:7] Set("SIP/77700000-0000184d", "TIMEOUT(response)=10") in new stack
+[Sep  8 09:44:29] VERBOSE[29539] func_timeout.c:     -- Response timeout set to 10.000
+[Sep  8 09:44:29] DEBUG[29539] pbx.c: Launching 'BackGround'
+[Sep  8 09:44:29] VERBOSE[29539] pbx.c:     -- Executing [s@ivr-3:8] BackGround("SIP/77700000-0000184d", "custom/18ivrkhby") in new stack
+[Sep  8 09:44:29] DEBUG[29539] channel.c: Set channel SIP/77700000-0000184d to write format slin
+[Sep  8 09:44:29] DEBUG[29539] res_rtp_asterisk.c: Ooh, format changed from unknown to ulaw
+[Sep  8 09:44:29] DEBUG[29539] res_rtp_asterisk.c: Created smoother: format: ulaw ms: 20 len: 160
+[Sep  8 09:44:29] DEBUG[29539] res_rtp_asterisk.c: Starting RTCP transmission on RTP instance '0x7fce3c014f38'
+[Sep  8 09:44:29] DEBUG[29539] channel.c: Scheduling timer at (50 requested / 50 actual) timer ticks per second
+[Sep  8 09:44:29] VERBOSE[29539] file.c:     -- <SIP/77700000-0000184d> Playing 'custom/18ivrkhby.slin' (language 'cn')
+[Sep  8 09:44:36] DEBUG[29539] res_rtp_asterisk.c: - RTP 2833 Event: 00000001 (len = 4)
+[Sep  8 09:44:36] DEBUG[29539] res_rtp_asterisk.c: Sending dtmf: 49 (1), at 10.1.187.127:15982
+[Sep  8 09:44:36] DEBUG[29539] res_rtp_asterisk.c: - RTP 2833 Event: 00000001 (len = 4)
+[Sep  8 09:44:36] DEBUG[29539] res_rtp_asterisk.c: - RTP 2833 Event: 00000001 (len = 4)
+[Sep  8 09:44:36] DEBUG[29539] res_rtp_asterisk.c: - RTP 2833 Event: 00000001 (len = 4)
+[Sep  8 09:44:36] DEBUG[29539] res_rtp_asterisk.c: Sending dtmf: 49 (1), at 10.1.187.127:15982
+[Sep  8 09:44:36] DEBUG[29539] channel.c: Scheduling timer at (0 requested / 0 actual) timer ticks per second
+[Sep  8 09:44:36] DEBUG[29539] channel.c: Scheduling timer at (0 requested / 0 actual) timer ticks per second
+[Sep  8 09:44:36] DEBUG[29539] channel.c: Set channel SIP/77700000-0000184d to write format ulaw
+[Sep  8 09:44:36] DEBUG[29539] pbx.c: Launching 'Goto'
+[Sep  8 09:44:36] VERBOSE[29539] pbx.c:     -- Executing [1@ivr-3:1] Goto("SIP/77700000-0000184d", "custom-order,s,1") in new stack
+[Sep  8 09:44:36] WARNING[29539] pbx.c: will not go assign 
+[Sep  8 09:44:36] VERBOSE[29539] pbx.c:     -- just Goto (custom-order,s,1)
+[Sep  8 09:44:36] DEBUG[29539] pbx.c: Launching 'Answer'
+[Sep  8 09:44:36] VERBOSE[29539] pbx.c:     -- Executing [s@custom-order:1] Answer("SIP/77700000-0000184d", "") in new stack
+[Sep  8 09:44:36] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:36] VERBOSE[29539] pbx.c:     -- Executing [s@custom-order:2] Set("SIP/77700000-0000184d", "order_service_flag=0") in new stack
+[Sep  8 09:44:36] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:36] VERBOSE[29539] pbx.c:     -- Executing [s@custom-order:3] Set("SIP/77700000-0000184d", "order_result=init") in new stack
+[Sep  8 09:44:36] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:36] VERBOSE[29539] pbx.c:     -- Executing [s@custom-order:4] Set("SIP/77700000-0000184d", "LOOPCOUNT=0") in new stack
+[Sep  8 09:44:36] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:36] VERBOSE[29539] pbx.c:     -- Executing [s@custom-order:5] Set("SIP/77700000-0000184d", "loop_902=0") in new stack
+[Sep  8 09:44:36] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:36] VERBOSE[29539] pbx.c:     -- Executing [s@custom-order:6] Set("SIP/77700000-0000184d", "enter_type=20") in new stack
+[Sep  8 09:44:36] DEBUG[29539] pbx.c: Function result is '18049895676'
+[Sep  8 09:44:36] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:36] VERBOSE[29539] pbx.c:     -- Executing [s@custom-order:7] Set("SIP/77700000-0000184d", "CALLERIDyt=18049895676") in new stack
+[Sep  8 09:44:36] DEBUG[29539] pbx.c: Launching 'AGI'
+[Sep  8 09:44:36] VERBOSE[29539] pbx.c:     -- Executing [s@custom-order:8] AGI("SIP/77700000-0000184d", "agi://127.0.0.1/check_no?CALLERIDyt=18049895676") in new stack
+[Sep  8 09:44:36] VERBOSE[29539] res_agi.c: agi://127.0.0.1/check_no?CALLERIDyt=18049895676: request is agi://127.0.0.1/check_no?CALLERIDyt=18049895676, method is check_no, path is CALLERIDyt=18049895676
+[Sep  8 09:44:36] VERBOSE[29539] res_agi.c:  agi://127.0.0.1/check_no?CALLERIDyt=18049895676: ########http://10.1.200.114/userweb/express.php?module=interfaceApi&action=sendExpress&phone=18049895676
+[Sep  8 09:44:36] VERBOSE[29539] res_agi.c:     -- agi://127.0.0.1/check_no?CALLERIDyt=18049895676: Get from order address info is empty
+[Sep  8 09:44:36] VERBOSE[29539] res_agi.c:     -- AGI Script Executing Application: (Goto) Options: (manual,1)
+[Sep  8 09:44:36] WARNING[29539] pbx.c: will not go assign 
+[Sep  8 09:44:36] VERBOSE[29539] pbx.c:     -- just Goto (custom-order,manual,1)
+[Sep  8 09:44:36] VERBOSE[29539] res_agi.c:     -- <SIP/77700000-0000184d>AGI Script agi://127.0.0.1/check_no?CALLERIDyt=18049895676 completed, returning 0
+[Sep  8 09:44:36] DEBUG[29539] pbx.c: Launching 'Playback'
+[Sep  8 09:44:36] VERBOSE[29539] pbx.c:     -- Executing [manual@custom-order:1] Playback("SIP/77700000-0000184d", "ytotts/yttts5_new") in new stack
+[Sep  8 09:44:36] DEBUG[29539] channel.c: Set channel SIP/77700000-0000184d to write format slin
+[Sep  8 09:44:36] DEBUG[29539] res_rtp_asterisk.c: Difference is 1136, ms is 162
+[Sep  8 09:44:36] DEBUG[29539] channel.c: Scheduling timer at (50 requested / 50 actual) timer ticks per second
+[Sep  8 09:44:36] VERBOSE[29539] file.c:     -- <SIP/77700000-0000184d> Playing 'ytotts/yttts5_new.slin' (language 'cn')
+[Sep  8 09:44:36] DEBUG[29539] res_rtp_asterisk.c: - RTP 2833 Event: 00000001 (len = 4)
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Scheduling timer at (0 requested / 0 actual) timer ticks per second
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Scheduling timer at (0 requested / 0 actual) timer ticks per second
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Scheduling timer at (0 requested / 0 actual) timer ticks per second
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Set channel SIP/77700000-0000184d to write format ulaw
+[Sep  8 09:44:39] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:39] VERBOSE[29539] pbx.c:     -- Executing [manual@custom-order:2] Set("SIP/77700000-0000184d", "order_service_flag=1") in new stack
+[Sep  8 09:44:39] DEBUG[29539] pbx.c: Function result is '18049895676'
+[Sep  8 09:44:39] DEBUG[29539] pbx.c: Launching 'AGI'
+[Sep  8 09:44:39] VERBOSE[29539] pbx.c:     -- Executing [manual@custom-order:3] AGI("SIP/77700000-0000184d", "agi://127.0.0.1/get_phone_banch_code?phonenum=18049895676") in new stack
+[Sep  8 09:44:39] VERBOSE[29539] res_agi.c: agi://127.0.0.1/get_phone_banch_code?phonenum=18049895676: request is agi://127.0.0.1/get_phone_banch_code?phonenum=18049895676, method is get_phone_banch_code, path is phonenum=18049895676
+[Sep  8 09:44:39] VERBOSE[29539] res_agi.c:     -- <SIP/77700000-0000184d>AGI Script agi://127.0.0.1/get_phone_banch_code?phonenum=18049895676 completed, returning 0
+[Sep  8 09:44:39] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:39] VERBOSE[29539] pbx.c:     -- Executing [manual@custom-order:4] Set("SIP/77700000-0000184d", "tm_id=18") in new stack
+[Sep  8 09:44:39] DEBUG[29539] pbx.c: Launching 'Goto'
+[Sep  8 09:44:39] VERBOSE[29539] pbx.c:     -- Executing [manual@custom-order:5] Goto("SIP/77700000-0000184d", "to_robot,s,1") in new stack
+[Sep  8 09:44:39] WARNING[29539] pbx.c: will not go assign 
+[Sep  8 09:44:39] VERBOSE[29539] pbx.c:     -- just Goto (to_robot,s,1)
+[Sep  8 09:44:39] DEBUG[29539] pbx.c: Launching 'NoOp'
+[Sep  8 09:44:39] VERBOSE[29539] pbx.c:     -- Executing [s@to_robot:1] NoOp("SIP/77700000-0000184d", "call to robot, area_zone 021!!!") in new stack
+[Sep  8 09:44:39] DEBUG[29539] pbx.c: Expression result is '0'
+[Sep  8 09:44:39] DEBUG[29539] pbx.c: Launching 'GotoIf'
+[Sep  8 09:44:39] VERBOSE[29539] pbx.c:     -- Executing [s@to_robot:2] GotoIf("SIP/77700000-0000184d", "0?timeconditions,18,1") in new stack
+[Sep  8 09:44:39] DEBUG[29539] pbx.c: Not taking any branch
+[Sep  8 09:44:39] DEBUG[29539] pbx.c: Function result is '0'
+[Sep  8 09:44:39] DEBUG[29539] pbx.c: Expression result is '0'
+[Sep  8 09:44:39] DEBUG[29539] pbx.c: Launching 'GotoIf'
+[Sep  8 09:44:39] VERBOSE[29539] pbx.c:     -- Executing [s@to_robot:3] GotoIf("SIP/77700000-0000184d", "0?timeconditions,18,1") in new stack
+[Sep  8 09:44:39] DEBUG[29539] pbx.c: Not taking any branch
+[Sep  8 09:44:39] DEBUG[29539] pbx.c: Function result is 'sibichi'
+[Sep  8 09:44:39] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:39] VERBOSE[29539] pbx.c:     -- Executing [s@to_robot:4] Set("SIP/77700000-0000184d", "robot_id=sibichi") in new stack
+[Sep  8 09:44:39] DEBUG[29539] pbx.c: Function result is 'sibichi'
+[Sep  8 09:44:39] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:39] VERBOSE[29539] pbx.c:     -- Executing [s@to_robot:5] Set("SIP/77700000-0000184d", "robot_name=sibichi") in new stack
+[Sep  8 09:44:39] DEBUG[29539] pbx.c: Expression result is '1'
+[Sep  8 09:44:39] DEBUG[29539] pbx.c: Function result is '00201'
+[Sep  8 09:44:39] DEBUG[29539] pbx.c: Function result is '00202'
+[Sep  8 09:44:39] DEBUG[29539] pbx.c: Function result is '00201'
+[Sep  8 09:44:39] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:39] VERBOSE[29539] pbx.c:     -- Executing [s@to_robot:6] Set("SIP/77700000-0000184d", "robot_client=00201") in new stack
+[Sep  8 09:44:39] DEBUG[29539] pbx.c: Function result is 'sip/sibichi'
+[Sep  8 09:44:39] DEBUG[29539] pbx.c: Expression result is '0'
+[Sep  8 09:44:39] DEBUG[29539] pbx.c: Launching 'GotoIf'
+[Sep  8 09:44:39] VERBOSE[29539] pbx.c:     -- Executing [s@to_robot:7] GotoIf("SIP/77700000-0000184d", "0?timeconditions,18,1") in new stack
+[Sep  8 09:44:39] DEBUG[29539] pbx.c: Not taking any branch
+[Sep  8 09:44:39] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:39] VERBOSE[29539] pbx.c:     -- Executing [s@to_robot:8] Set("SIP/77700000-0000184d", "is_call_robot=1") in new stack
+[Sep  8 09:44:39] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:39] VERBOSE[29539] pbx.c:     -- Executing [s@to_robot:9] Set("SIP/77700000-0000184d", "MONITOR_FILENAME=/tmpmonitor/justcall/1536371068.6221.100031.wav") in new stack
+[Sep  8 09:44:39] DEBUG[29539] pbx.c: Launching 'MixMonitor'
+[Sep  8 09:44:39] VERBOSE[29539] pbx.c:     -- Executing [s@to_robot:10] MixMonitor("SIP/77700000-0000184d", "/tmpmonitor/justcall/1536371068.6221.100031.wav,b") in new stack
+[Sep  8 09:44:39] DEBUG[29539] autochan.c: Created autochan 0x7fce18285c90 to hold channel SIP/77700000-0000184d (0x7fce3c00ddb8)
+[Sep  8 09:44:39] DEBUG[29539] pbx.c: Function result is 'sip/sibichi'
+[Sep  8 09:44:39] DEBUG[29539] pbx.c: Launching 'DialExt'
+[Sep  8 09:44:39] VERBOSE[29539] pbx.c:     -- Executing [s@to_robot:11] DialExt("SIP/77700000-0000184d", "sip/sibichi/00201,8,TtL(0)g") in new stack
+[Sep  8 09:44:39] DEBUG[29539] ccss.c: Agent policy for SIP/77700000-0000184d is 'never'. CC not possible
+[Sep  8 09:44:39] VERBOSE[29539] app_dial.c:     -- Robot sip call[sip/sibichi] - [sibichi] 
+[Sep  8 09:44:39] DEBUG[29539] app_dial.c: dial_string is [] t_user_cids = [18049895676]
+[Sep  8 09:44:39] VERBOSE[29539] app_dial.c:     -- ready call ---- > [sibichi/00201] 
+[Sep  8 09:44:39] DEBUG[29539] chan_sip.c: Asked to create a SIP channel with formats: 0x4 (ulaw)
+[Sep  8 09:44:39] DEBUG[29539] chan_sip.c: Allocating new SIP dialog for 5432517b5ba8bf13453b3e060bd7a935@10.1.187.31 - INVITE (No RTP)
+[Sep  8 09:44:39] DEBUG[29539] rtp_engine.c: Using engine 'asterisk' for RTP instance '0x7fce199cce08'
+[Sep  8 09:44:39] DEBUG[29539] res_rtp_asterisk.c: Allocated port 14192 for RTP instance '0x7fce199cce08'
+[Sep  8 09:44:39] DEBUG[29539] rtp_engine.c: RTP instance '0x7fce199cce08' is setup and ready to go
+[Sep  8 09:44:39] DEBUG[29539] res_rtp_asterisk.c: Setup RTCP on RTP instance '0x7fce199cce08'
+[Sep  8 09:44:39] VERBOSE[29539] netsock2.c:   == Using SIP RTP CoS mark 5
+[Sep  8 09:44:39] DEBUG[29539] chan_sip.c: Setting NAT on RTP to On
+[Sep  8 09:44:39] DEBUG[29539] acl.c: For destination '116.62.159.13', our source address is '10.1.187.31'.
+[Sep  8 09:44:39] DEBUG[29539] chan_sip.c: Target address 116.62.159.13:6080 is not local, substituting externaddr
+[Sep  8 09:44:39] DEBUG[29539] chan_sip.c: Setting SIP_TRANSPORT_UDP with address 58.40.21.183:7368
+[Sep  8 09:44:39] DEBUG[29539] chan_sip.c: *** Our native formats are 0x4 (ulaw) 
+[Sep  8 09:44:39] DEBUG[29539] chan_sip.c: *** Joint capabilities are 0x4 (ulaw) 
+[Sep  8 09:44:39] DEBUG[29539] chan_sip.c: *** Our capabilities are 0x50f (g723|gsm|ulaw|alaw|g729|ilbc) 
+[Sep  8 09:44:39] DEBUG[29539] chan_sip.c: *** AST_CODEC_CHOOSE formats are 0x4 (ulaw) 
+[Sep  8 09:44:39] DEBUG[29539] chan_sip.c: *** Our preferred formats from the incoming channel are 0x4 (ulaw) 
+[Sep  8 09:44:39] DEBUG[29539] chan_sip.c: This channel will not be able to handle video.
+[Sep  8 09:44:39] DEBUG[29539] chan_sip.c: sip new channl -------------------------- < [SIP/sibichi-0000184e] 
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Not copying variable DIALEDTIME.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Not copying variable ANSWEREDTIME.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Not copying variable DIALEDPEERNAME.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Not copying variable DIALEDPEERNUMBER.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Not copying variable DIALSTATUS.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Not copying variable DB_RESULT.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Not copying variable MIXMONITOR_FILENAME.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Not copying variable MONITOR_FILENAME.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Not copying variable is_call_robot.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Not copying variable robot_client.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Not copying variable robot_name.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Not copying variable robot_id.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Not copying variable tm_id.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Not copying variable AGISTATUS.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Not copying variable order_service_flag.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Not copying variable PLAYBACKSTATUS.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Not copying variable order_result.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Not copying variable CALLERIDyt.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Not copying variable enter_type.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Not copying variable loop_902.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Not copying variable LOOPCOUNT.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Not copying variable BACKGROUNDSTATUS.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Copying hard-transferable variable DIR-CHANNEL.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Copying hard-transferable variable DIR-CONTEXT.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Not copying variable FROM_DID.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Not copying variable DID.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Not copying variable area_zone.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Not copying variable PHONEFILE.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Not copying variable CALLEE.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Not copying variable invite_from.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Not copying variable invite_order.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Not copying variable SIPCALLID.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Not copying variable SIPDOMAIN.
+[Sep  8 09:44:39] DEBUG[29539] channel.c: Not copying variable SIPURI.
+[Sep  8 09:44:39] DEBUG[29539] chan_sip.c: Outgoing Call for 00201
+[Sep  8 09:44:39] DEBUG[29539] chan_sip.c: Updating call counter for outgoing call
+[Sep  8 09:44:39] DEBUG[29539] chan_sip.c: ** Our capability: 0x10e (gsm|ulaw|alaw|g729) Video flag: False Text flag: False
+[Sep  8 09:44:39] DEBUG[29539] chan_sip.c: ** Our prefcodec: 0x4 (ulaw) 
+[Sep  8 09:44:39] DEBUG[29539] chan_sip.c: -- Done with adding codecs to SDP
+[Sep  8 09:44:39] DEBUG[29539] chan_sip.c: Done building SDP. Settling with this capability: 0x10e (gsm|ulaw|alaw|g729)
+[Sep  8 09:44:39] DEBUG[29539] chan_sip.c: Initializing initreq for method INVITE - callid 11eb50e874a1f3b666c7a4715a46f521@58.40.21.183
+[Sep  8 09:44:39] DEBUG[29539] app_dial.c: --->call ok is 1 and fcc_nums is 0 
+[Sep  8 09:44:39] DEBUG[29539] res_rtp_asterisk.c: No remote address on RTP instance '0x7fce199cce08' so dropping frame
+[Sep  8 09:44:39] VERBOSE[29539] app_dial.c:     -- SIP/sibichi-0000184e answered--SIP/77700000-0000184d
+[Sep  8 09:44:39] DEBUG[29539] features.c: Removing dialed interfaces datastore on SIP/sibichi-0000184e since we're bridging
+[Sep  8 09:44:39] DEBUG[29539] res_rtp_asterisk.c: Setting the marker bit due to a source update
+[Sep  8 09:44:39] DEBUG[29539] res_rtp_asterisk.c: Setting the marker bit due to a source update
+[Sep  8 09:44:39] DEBUG[29539] res_rtp_asterisk.c: Ooh, format changed from unknown to ulaw
+[Sep  8 09:44:39] DEBUG[29539] res_rtp_asterisk.c: Created smoother: format: ulaw ms: 20 len: 160
+[Sep  8 09:44:39] DEBUG[29539] res_rtp_asterisk.c: Starting RTCP transmission on RTP instance '0x7fce199cce08'
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Didn't get a frame from channel: SIP/sibichi-0000184e
+[Sep  8 09:44:40] DEBUG[29539] res_rtp_asterisk.c: Setting the marker bit due to a source update
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Bridge stops bridging channels SIP/77700000-0000184d and SIP/sibichi-0000184e
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Hanging up channel 'SIP/sibichi-0000184e'
+[Sep  8 09:44:40] DEBUG[29539] chan_sip.c: Hanging up zombie call. Be scared.
+[Sep  8 09:44:40] DEBUG[29539] res_rtp_asterisk.c: Setting RTCP address on RTP instance '0x7fce199cce08'
+[Sep  8 09:44:40] DEBUG[29539] app_dial.c: Exiting with DIALSTATUS=ANSWER.
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Launching 'StopMixMonitor'
+[Sep  8 09:44:40] VERBOSE[29539] pbx.c:     -- Executing [s@to_robot:12] StopMixMonitor("SIP/77700000-0000184d", "") in new stack
+[Sep  8 09:44:40] VERBOSE[29539] app_mixmonitor.c:   == MixMonitor close filestream
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Launching 'NoOp'
+[Sep  8 09:44:40] VERBOSE[29539] pbx.c:     -- Executing [s@to_robot:13] NoOp("SIP/77700000-0000184d", "HangupCauseCode<16>, robot_callid<11eb50e874a1f3b666c7a4715a46f521@58.40.21.183>") in new stack
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Expression result is '1'
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Function result is '1'
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:40] VERBOSE[29539] pbx.c:     -- Executing [s@to_robot:14] Set("SIP/77700000-0000184d", "no_assign_flag=1") in new stack
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Expression result is '0'
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Launching 'GotoIf'
+[Sep  8 09:44:40] VERBOSE[29539] pbx.c:     -- Executing [s@to_robot:15] GotoIf("SIP/77700000-0000184d", "0?timeconditions,18,1") in new stack
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Not taking any branch
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Expression result is '0'
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Function result is '16'
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:40] VERBOSE[29539] pbx.c:     -- Executing [s@to_robot:16] Set("SIP/77700000-0000184d", "HangupCauseCode=16") in new stack
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Expression result is '0'
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Launching 'GotoIf'
+[Sep  8 09:44:40] VERBOSE[29539] pbx.c:     -- Executing [s@to_robot:17] GotoIf("SIP/77700000-0000184d", "0?from-internal,15,1") in new stack
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Not taking any branch
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Launching 'Goto'
+[Sep  8 09:44:40] VERBOSE[29539] pbx.c:     -- Executing [s@to_robot:18] Goto("SIP/77700000-0000184d", "timeconditions,18,1") in new stack
+[Sep  8 09:44:40] WARNING[29539] pbx.c: no_assign_flag is 1, will goto central system 
+[Sep  8 09:44:40] VERBOSE[29539] pbx.c:     -- justcall  Goto (timeconditions,18,1)
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Launching 'GotoIfTime'
+[Sep  8 09:44:40] VERBOSE[29539] pbx.c:     -- Executing [18@timeconditions:1] GotoIfTime("SIP/77700000-0000184d", "08:00-21:00|*|*|*?to_queue,902,1") in new stack
+[Sep  8 09:44:40] WARNING[29539] pbx.c: no_assign_flag is 1, will goto central system 
+[Sep  8 09:44:40] VERBOSE[29539] pbx.c:     -- justcall  Goto (to_queue,902,1)
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:40] VERBOSE[29539] pbx.c:     -- Executing [902@to_queue:1] Set("SIP/77700000-0000184d", "QU=902") in new stack
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Launching 'AGI'
+[Sep  8 09:44:40] VERBOSE[29539] pbx.c:     -- Executing [902@to_queue:2] AGI("SIP/77700000-0000184d", "agi://127.0.0.1/dynamic_assign_queuewait") in new stack
+[Sep  8 09:44:40] VERBOSE[29539] res_agi.c: agi://127.0.0.1/dynamic_assign_queuewait: request is agi://127.0.0.1/dynamic_assign_queuewait, method is dynamic_assign_queuewait, path is 
+[Sep  8 09:44:40] VERBOSE[29539] res_agi.c:     -- agi://127.0.0.1/dynamic_assign_queuewait: head_pbx[200032]--[0]--[0]--busy_value[1000]
+[Sep  8 09:44:40] VERBOSE[29539] res_agi.c:     -- <SIP/77700000-0000184d>AGI Script agi://127.0.0.1/dynamic_assign_queuewait completed, returning 0
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Expression result is '1'
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Launching 'GotoIf'
+[Sep  8 09:44:40] VERBOSE[29539] pbx.c:     -- Executing [902@to_queue:3] GotoIf("SIP/77700000-0000184d", "1?to_head,s,1") in new stack
+[Sep  8 09:44:40] WARNING[29539] pbx.c: no_assign_flag is 1, will goto central system 
+[Sep  8 09:44:40] VERBOSE[29539] pbx.c:     -- justcall  Goto (to_head,s,1)
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Function result is 'pbx032'
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Launching 'NoOp'
+[Sep  8 09:44:40] VERBOSE[29539] pbx.c:     -- Executing [s@to_head:1] NoOp("SIP/77700000-0000184d", "sys_head pbx032, head_pbx 200032") in new stack
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Function result is 'pbx032'
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:40] VERBOSE[29539] pbx.c:     -- Executing [s@to_head:2] Set("SIP/77700000-0000184d", "sys_head=pbx032") in new stack
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:40] VERBOSE[29539] pbx.c:     -- Executing [s@to_head:3] Set("SIP/77700000-0000184d", "CALLID=1536371068.6221.100031") in new stack
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Expression result is '1'
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Function result is '000000'
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:40] VERBOSE[29539] pbx.c:     -- Executing [s@to_head:4] Set("SIP/77700000-0000184d", "select_number=000000") in new stack
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:40] VERBOSE[29539] pbx.c:     -- Executing [s@to_head:5] Set("SIP/77700000-0000184d", "CALLEE=902") in new stack
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:40] VERBOSE[29539] pbx.c:     -- Executing [s@to_head:6] Set("SIP/77700000-0000184d", "assign_type=------11eb50e874a1f3b666c7a4715a46f521@58.40.21.183") in new stack
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:44:40] VERBOSE[29539] pbx.c:     -- Executing [s@to_head:7] Set("SIP/77700000-0000184d", "CHANNEL(accountcode)=pbx032") in new stack
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Launching 'SyncCDR'
+[Sep  8 09:44:40] VERBOSE[29539] pbx.c:     -- Executing [s@to_head:8] SyncCDR("SIP/77700000-0000184d", "add") in new stack
+[Sep  8 09:44:40] DEBUG[29539] pbx.c: Launching 'DialExt'
+[Sep  8 09:44:40] VERBOSE[29539] pbx.c:     -- Executing [s@to_head:9] DialExt("SIP/77700000-0000184d", "SIP/pbx032/77700000,20,Tt") in new stack
+[Sep  8 09:44:40] DEBUG[29539] ccss.c: Agent policy for SIP/77700000-0000184d is 'never'. CC not possible
+[Sep  8 09:44:40] VERBOSE[29539] app_dial.c:     -- Robot sip call[SIP/pbx032] - [] 
+[Sep  8 09:44:40] DEBUG[29539] app_dial.c: dial_string is [] t_user_cids = [18049895676]
+[Sep  8 09:44:40] VERBOSE[29539] app_dial.c:     -- ready call ---- > [pbx032/77700000] 
+[Sep  8 09:44:40] DEBUG[29539] chan_sip.c: Asked to create a SIP channel with formats: 0x4 (ulaw)
+[Sep  8 09:44:40] DEBUG[29539] chan_sip.c: Allocating new SIP dialog for 63124247485354271ff36c4d272785a9@10.1.187.31 - INVITE (No RTP)
+[Sep  8 09:44:40] DEBUG[29539] rtp_engine.c: Using engine 'asterisk' for RTP instance '0x7fce18034e18'
+[Sep  8 09:44:40] DEBUG[29539] res_rtp_asterisk.c: Allocated port 19346 for RTP instance '0x7fce18034e18'
+[Sep  8 09:44:40] DEBUG[29539] rtp_engine.c: RTP instance '0x7fce18034e18' is setup and ready to go
+[Sep  8 09:44:40] DEBUG[29539] res_rtp_asterisk.c: Setup RTCP on RTP instance '0x7fce18034e18'
+[Sep  8 09:44:40] VERBOSE[29539] netsock2.c:   == Using SIP RTP CoS mark 5
+[Sep  8 09:44:40] DEBUG[29539] chan_sip.c: Setting NAT on RTP to On
+[Sep  8 09:44:40] DEBUG[29539] acl.c: For destination '10.1.188.32', our source address is '10.1.187.31'.
+[Sep  8 09:44:40] DEBUG[29539] chan_sip.c: Target address 10.1.188.32:7368 is not local, substituting externaddr
+[Sep  8 09:44:40] DEBUG[29539] chan_sip.c: Setting SIP_TRANSPORT_UDP with address 58.40.21.183:7368
+[Sep  8 09:44:40] DEBUG[29539] chan_sip.c: *** Our native formats are 0x4 (ulaw) 
+[Sep  8 09:44:40] DEBUG[29539] chan_sip.c: *** Joint capabilities are 0x4 (ulaw) 
+[Sep  8 09:44:40] DEBUG[29539] chan_sip.c: *** Our capabilities are 0x50f (g723|gsm|ulaw|alaw|g729|ilbc) 
+[Sep  8 09:44:40] DEBUG[29539] chan_sip.c: *** AST_CODEC_CHOOSE formats are 0x4 (ulaw) 
+[Sep  8 09:44:40] DEBUG[29539] chan_sip.c: *** Our preferred formats from the incoming channel are 0x4 (ulaw) 
+[Sep  8 09:44:40] DEBUG[29539] chan_sip.c: This channel will not be able to handle video.
+[Sep  8 09:44:40] DEBUG[29539] chan_sip.c: sip new channl -------------------------- < [SIP/pbx032-0000184f] 
+[Sep  8 09:44:40] DEBUG[29539] rtp_engine.c: Seeded SDP of 'SIP/pbx032-0000184f' with that of 'SIP/77700000-0000184d'
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable DIALEDTIME.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable ANSWEREDTIME.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable DIALEDPEERNAME.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable DIALEDPEERNUMBER.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable DIALSTATUS.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable assign_type.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable CALLEE.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable select_number.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable CALLID.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable sys_head.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable DB_RESULT.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable AGISTATUS.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable head_pbx.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable QU.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable HangupCauseCode.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable no_assign_flag.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable robot_callid.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable RTPAUDIOQOSRTT.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable RTPAUDIOQOSLOSS.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable RTPAUDIOQOSJITTER.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable RTPAUDIOQOS.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable RTPAUDIOQOSRTTBRIDGED.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable RTPAUDIOQOSLOSSBRIDGED.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable RTPAUDIOQOSJITTERBRIDGED.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable RTPAUDIOQOSBRIDGED.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable BRIDGEPVTCALLID.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable MIXMONITOR_FILENAME.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable MONITOR_FILENAME.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable is_call_robot.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable robot_client.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable robot_name.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable robot_id.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable tm_id.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable order_service_flag.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable PLAYBACKSTATUS.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable order_result.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable CALLERIDyt.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable enter_type.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable loop_902.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable LOOPCOUNT.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable BACKGROUNDSTATUS.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Copying hard-transferable variable DIR-CHANNEL.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Copying hard-transferable variable DIR-CONTEXT.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable FROM_DID.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable DID.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable area_zone.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable PHONEFILE.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable invite_from.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable invite_order.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable SIPCALLID.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable SIPDOMAIN.
+[Sep  8 09:44:40] DEBUG[29539] channel.c: Not copying variable SIPURI.
+[Sep  8 09:44:40] DEBUG[29539] chan_sip.c: Outgoing Call for 77700000
+[Sep  8 09:44:40] DEBUG[29539] chan_sip.c: Updating call counter for outgoing call
+[Sep  8 09:44:40] DEBUG[29539] chan_sip.c: ** Our capability: 0x10e (gsm|ulaw|alaw|g729) Video flag: False Text flag: False
+[Sep  8 09:44:40] DEBUG[29539] chan_sip.c: ** Our prefcodec: 0x4 (ulaw) 
+[Sep  8 09:44:40] DEBUG[29539] chan_sip.c: -- Done with adding codecs to SDP
+[Sep  8 09:44:40] DEBUG[29539] chan_sip.c: Done building SDP. Settling with this capability: 0x10e (gsm|ulaw|alaw|g729)
+[Sep  8 09:44:40] DEBUG[29539] chan_sip.c: Initializing initreq for method INVITE - callid 790f0e42277cccd845eaa0a300a9e313@58.40.21.183
+[Sep  8 09:44:40] DEBUG[29539] app_dial.c: --->call ok is 1 and fcc_nums is 0 
+[Sep  8 09:44:40] VERBOSE[29539] app_dial.c:     -- SIP/pbx032-0000184f is making progress passing it to SIP/77700000-0000184d
+[Sep  8 09:44:40] DEBUG[29539] rtp_engine.c: Setting early bridge SDP of 'SIP/77700000-0000184d' with that of 'SIP/pbx032-0000184f'
+[Sep  8 09:44:40] VERBOSE[29539] app_dial.c:     -- SIP/pbx032-0000184f answered--SIP/77700000-0000184d
+[Sep  8 09:44:40] DEBUG[29539] features.c: Removing dialed interfaces datastore on SIP/pbx032-0000184f since we're bridging
+[Sep  8 09:44:40] DEBUG[29539] res_rtp_asterisk.c: Setting the marker bit due to a source update
+[Sep  8 09:44:40] DEBUG[29539] res_rtp_asterisk.c: Setting the marker bit due to a source update
+[Sep  8 09:44:40] DEBUG[29539] res_rtp_asterisk.c: Ooh, format changed from unknown to ulaw
+[Sep  8 09:44:40] DEBUG[29539] res_rtp_asterisk.c: Created smoother: format: ulaw ms: 20 len: 160
+[Sep  8 09:44:40] DEBUG[29539] res_rtp_asterisk.c: Starting RTCP transmission on RTP instance '0x7fce18034e18'
+[Sep  8 09:44:45] DEBUG[29539] res_rtp_asterisk.c: Got RTCP report of 64 bytes
+[Sep  8 09:44:50] DEBUG[29539] res_rtp_asterisk.c: Got RTCP report of 64 bytes
+[Sep  8 09:44:55] DEBUG[29539] res_rtp_asterisk.c: Got RTCP report of 64 bytes
+[Sep  8 09:45:00] DEBUG[29539] res_rtp_asterisk.c: Got RTCP report of 64 bytes
+[Sep  8 09:45:05] DEBUG[29539] res_rtp_asterisk.c: Got RTCP report of 64 bytes
+[Sep  8 09:45:10] DEBUG[29539] res_rtp_asterisk.c: Got RTCP report of 64 bytes
+[Sep  8 09:45:10] DEBUG[29539] channel.c: Didn't get a frame from channel: SIP/77700000-0000184d
+[Sep  8 09:45:10] DEBUG[29539] res_rtp_asterisk.c: Setting the marker bit due to a source update
+[Sep  8 09:45:10] DEBUG[29539] channel.c: Bridge stops bridging channels SIP/77700000-0000184d and SIP/pbx032-0000184f
+[Sep  8 09:45:10] DEBUG[29539] channel.c: Hanging up channel 'SIP/pbx032-0000184f'
+[Sep  8 09:45:10] DEBUG[29539] chan_sip.c: Hanging up zombie call. Be scared.
+[Sep  8 09:45:10] DEBUG[29539] res_rtp_asterisk.c: Setting RTCP address on RTP instance '0x7fce18034e18'
+[Sep  8 09:45:10] DEBUG[29539] app_dial.c: Exiting with DIALSTATUS=ANSWER.
+[Sep  8 09:45:10] DEBUG[29539] pbx.c: Spawn extension (to_head,s,9) exited non-zero on 'SIP/77700000-0000184d'
+[Sep  8 09:45:10] VERBOSE[29539] pbx.c:   == Spawn extension (to_head, s, 9) exited non-zero on 'SIP/77700000-0000184d'
+[Sep  8 09:45:10] DEBUG[29539] channel.c: Soft-Hanging up channel 'SIP/77700000-0000184d'
+[Sep  8 09:45:10] DEBUG[29539] pbx.c: Function result is 's'
+[Sep  8 09:45:10] DEBUG[29539] pbx.c: Launching 'NoOp'
+[Sep  8 09:45:10] VERBOSE[29539] pbx.c:     -- Executing [h@to_head:1] NoOp("SIP/77700000-0000184d", " sfrom h exten Dial faild with DIALSTATUS is 'ANSWER'") in new stack
+[Sep  8 09:45:10] DEBUG[29539] pbx.c: Expression result is '1'
+[Sep  8 09:45:10] DEBUG[29539] pbx.c: Launching 'GotoIf'
+[Sep  8 09:45:10] VERBOSE[29539] pbx.c:     -- Executing [h@to_head:2] GotoIf("SIP/77700000-0000184d", "1?end") in new stack
+[Sep  8 09:45:10] WARNING[29539] pbx.c: no_assign_flag is 1, will goto central system 
+[Sep  8 09:45:10] VERBOSE[29539] pbx.c:     -- justcall  Goto (to_head,h,4)
+[Sep  8 09:45:10] DEBUG[29539] pbx.c: Expression result is '1'
+[Sep  8 09:45:10] DEBUG[29539] pbx.c: Function result is 'NO_SPECAIL_CDR'
+[Sep  8 09:45:10] DEBUG[29539] pbx.c: Launching 'Set'
+[Sep  8 09:45:10] VERBOSE[29539] pbx.c:     -- Executing [h@to_head:4] Set("SIP/77700000-0000184d", "confirm_order=NO_SPECAIL_CDR") in new stack
+[Sep  8 09:45:10] DEBUG[29539] pbx.c: Launching 'Hangup'
+[Sep  8 09:45:10] VERBOSE[29539] pbx.c:     -- Executing [h@to_head:5] Hangup("SIP/77700000-0000184d", "") in new stack
+[Sep  8 09:45:10] DEBUG[29539] pbx.c: Spawn extension (to_head,h,5) exited non-zero on 'SIP/77700000-0000184d'
+[Sep  8 09:45:10] VERBOSE[29539] pbx.c:   == Spawn extension (to_head, h, 5) exited non-zero on 'SIP/77700000-0000184d'
+[Sep  8 09:45:10] DEBUG[29539] channel.c: Hanging up channel 'SIP/77700000-0000184d'
+[Sep  8 09:45:10] DEBUG[29539] chan_sip.c: Hanging up zombie call. Be scared.
+[Sep  8 09:45:10] DEBUG[29539] res_rtp_asterisk.c: Setting RTCP address on RTP instance '0x7fce3c014f38'
+[Sep  8 09:45:10] DEBUG[29539] core_item.c: task_nums=[12781] sql=[insert into se_auto_order(`caller`,`callee`,`incoming_time`,`call_id`,`status`,`agent_service_flag`) values('18049895676','77700000','2018-09-08 09:44:28','1536371068.6221.100031','fail','1')] 
+[Sep  8 09:45:10] DEBUG[29539] core_item.c: task_nums=[12782] sql=[insert into se_auto_order(`caller`,`callee`,`incoming_time`,`call_id`,`status`,`agent_service_flag`) values('18049895676','77700000','2018-09-08 09:44:28','1536371068.6221.100031','fail','1')] 
+[Sep  8 09:45:10] DEBUG[29539] cdr.c: ---->post_cdr [0] [SIP/77700000-0000184d] 
+[Sep  8 09:45:10] DEBUG[29539] cdr.c: cdr's clid="18049895676" <18049895676> src=18049895676, dst=s, channel=SIP/77700000-0000184d, dcontext=to_head, lastapp=DialExt, lastdata=SIP/pbx032/77700000,20,Tt,dstchannel =SIP/pbx032-0000184f,uniqueid=1536371068.6221.100031, amaflags=1, accountcode=pbx032 , accountcode_tmp=, tmp_src=, did=77700000
+[Sep  8 09:45:10] DEBUG[29539] acl.c: sql = [SELECT `name` AS custom_name,id AS custom_id FROM crm_customerinfo WHERE phone1='18049895676' OR phone1='018049895676' OR phone2='18049895676' OR phone2='018049895676' OR phone3='18049895676' OR phone3='018049895676' limit 1] 
+[Sep  8 09:45:10] DEBUG[29539] cdr.c: ######CDR DID check  is not kuaiyun
+[Sep  8 09:45:10] DEBUG[29539] core_item.c: task_nums=[12783] sql=[INSERT INTO ss_cdr_cdr_info (caller_number,callee_number,call_id,call_id_trans,start_stamp,ring_stamp,ivr_answer_stamp,agent_answer_stamp,ivr_end_stamp,agent_end_stamp,end_stamp,duration,bill_sec,ivr_sec,agent_sec,wait_agent_sec,wait_agent_ans_sec,wait_ring_sec,dst_context,channel,dst_channel,queue,queue_list,ivr_key,use_ivr,use_manual,agent_number,transfer_number,shift_number,trans_by,province,area,threecall,agent_hold_times,hangup_code,call_type,group_id,loss,monitor_filename,hour,customer_id,customer_name,trans_inner_times,choice,ivr_key_id,order_status,group_id2,cell_number,call_progress,toll_call, work_no,assign_branch,assign_result,assign_queue,`order`,branch_code, is_call_agent, order_full, branch_code_full,is_kuaiyun,pre_pbx_id,trunk_name,robot_id,robot_name,robot_callid,robot_order_status,robot_ring_stamp,robot_answer_stamp,robot_end_stamp,robot_sec,robot_wait_ans_sec) VALUES ('18049895676','77700000','1536371068.6221.100031','','2018-09-08 09:44:28','2018-09-08 09:44:40','2018-09-08 09:44:29','2018-09-08 09:44:40','2018-09-08 09:44:36','2018-09-08 09:45:10','2018-09-08 09:45:10',42,42,7,30,0,0,0,'to_head','SIP/77700000-0000184d','SIP/pbx032-0000184f','','','95554ivr:1',1,0,'pbx032','','','','上海','上海','',0,1,1,0,'','pbx032-1-18049895676-20180908094428','09','0','', '0','NO_SPECAIL_CDR','95554ivr:1','0','0','','','2','','','0','','','', '51','','',0,'','77700000','sibichi','sibichi','11eb50e874a1f3b666c7a4715a46f521@58.40.21.183',16,'0000-00-00 00:00:00','2018-09-08 09:44:39','2018-09-08 09:44:40',1,0);] 
